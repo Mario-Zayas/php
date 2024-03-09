@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: biblio
+spec:
+    rules:
+    - host: www.biblio.org
+      http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+                service:
+                    name: biblio
+                    port:
+                        number: 80
